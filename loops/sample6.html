@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //let is a blocked scoped
+    let num = 5;
+    function welcome(){
+        
+        //var is function scoped
+        var msg = 'Hello';
+        num = 8;
+        console.log(msg);
+        console.log("with in a function: " + num);
+    }
+    console.log("outside a function :" + num);
+    //console.log(msg);
+    welcome();
+
+</script>
+<body>
+    
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //object through construcor
+    function User(email,password){
+        this.email = email;
+        this.password = password;  
+        this.getInfo = function(){
+            console.log(this.email + " " + this.password);
+        }     
+    }
+
+    let u1 = new User("alex@gmail.com","123456");
+    let u2 = new User("bob@gmail.com","123456");
+    //console.log(u1.email + " " + u1.password);
+    //console.log(u2.email + " " + u2.password);
+    u1.getInfo();
+    u2.getInfo();
+
+</script>
+<body>
+    <h2> Sample JS </h2>
+</body>
+</html>

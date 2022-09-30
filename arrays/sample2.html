@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+//using new keyword
+ const names = new Array("Alex","Alen","Bob","Clare");
+ for( var i = 0 ; i < names.length ; i++ ){
+        console.log(names[i]);
+    }
+
+    names.push('John');
+    console.log("==============================")
+    for( var i = 0 ; i < names.length ; i++ ){
+        console.log(names[i]);
+    }
+    console.log("==============================")
+    names.pop();
+    for( var i = 0 ; i < names.length ; i++ ){
+        console.log(names[i]);
+    }
+</script>
+<body>
+        <h2> JS Arrays</h2>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    class Customer {
+        constructor(name,phone,email){
+            this.name = name;
+            this.phone = phone;
+            this.email = email;
+        }
+        getInfo(){
+            console.log(this.name + " " + this.phone + " " + this.email);
+        }
+    }
+    class Billing extends Customer{
+        constructor(cname,cphone,cemail,bill_amount){
+            super(cname,cphone,cemail);
+            this.bill_amount = bill_amount;
+        }
+        generateInvoice(){
+            this.getInfo();
+            console.log(this.bill_amount )
+        }
+    }
+
+    class PayemtStatus extends Billing{
+        constructor(cname,cphone,cemail,bill_amount,payment_mode){
+            super(cname,cphone,cemail,bill_amount,payment_mode);
+            this.payment_mode = payment_mode;
+        }
+
+        getPaymentsReport(){           
+            this.generateInvoice();
+            console.log(this.payment_mode);
+        }
+    }
+  //  let totalAmount = new Billing('Alex','0987654321','alex@gmail.com','56000');
+  //  totalAmount.generateInvoice();
+
+  let getPaymentDetails = new PayemtStatus('Alex','0987654321','alex@gmail.com','56000','online Transaction');
+  getPaymentDetails.getPaymentsReport();
+</script>
+<body>
+    <h2> Sample JS </h2>
+</body>
+</html>
