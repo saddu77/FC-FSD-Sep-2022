@@ -1,0 +1,92 @@
+
+	Web App Development:
+	====================
+
+	Manual Transaction:
+	===================
+	solution:
+	Online Transaction App: web App : application works over browser
+	=========================
+
+	Customer1 --->	Customer2
+		  <---
+	===========================
+	Smarter solution:
+			quick,easy,safe,secured,
+	Instant Banking: UPI Payments
+
+	FSD : Full Stack Developer
+	
+		FrontEnd                  	backend
+		html css bootstrap      	NodeJS    
+		React				Java
+						Python
+						.Net
+						PHP
+	==============================================================================
+		FreeCharge:
+		----------
+			Banking
+		==============================
+		Web App (fast,secued,easy,manageable,scalibilty).....
+
+		Tools:
+		=====
+			VSCode
+			Git
+			
+
+		HelloWorld Execution in JS
+		==========================
+		.txt
+		.java
+		.zip
+	
+
+
+		-----------------------------
+		fileName.js
+		Hello.html
+		
+
+		Step1: created a new Repo in github
+		Step2: Installed Git in windows
+		Step3: Created a new folder : exrecise
+		Step4: Open GitBash and git init
+		Step5: copied all files into repo downlaoded in exercise folder
+		Step6: Navigate into repo
+		Step6: git status
+		Step7: git add .
+		Step8: git status
+		Step9: git commit -m "my first commit"
+		STep10: git push origin main
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+						
