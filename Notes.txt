@@ -62,6 +62,65 @@
 		STep10: git push origin main
 
 
+	==========================================================================================
+		NodeJS:
+			node --version
+			npm --version
+
+		
+		Files :
+		------
+			Syntax to read a file:
+						fs.readFile(file_name,encoding,callback_function);
+
+			Syntax to write a file:
+						fs.writeFile(file_name,data,options,callback);
+
+
+			Callback: Function passed as an argument inside another function is called callback;
+
+		JSON Server:
+		------------
+				It is a Node Module used to create demo REST [Representational State Transfer] JSON webservice.
+
+				npm install -g json-server
+
+				json-server --watch db.json
+
+				CRUD Operations:
+
+				Create
+				Read
+				Update
+				Delete
+
+
+				POSTMAN
+
+
+				CaseSTudy : 01-Oct-2022
+						-> Execute All samples
+						-> Products: CRUD
+								Products[name,cost,qty,code...]
+
+				===================================================================================================
+
+				Weekend:
+					10 AM TO 5 PM:
+					--------------
+		
+					Session + Lab
+
+					10 AM to 12 AM ---> LAB [Execute All samples]
+			
+					12:30 PM to 2:30 PM ----> Session
+	
+					3:00 PM to 5:00 PM ----> LAB [CaseSTudy 2 : Products]
+
+				===================================================================================================
+				
+
+
 
 
 
