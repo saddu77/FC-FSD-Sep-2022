@@ -319,7 +319,34 @@
 						=======		
 							Node provide http Server  ----> localhost:5000
 				
-		
+		===============================================================================================
+
+			JavaScript:  ------> ECMAScript or ES2015 ---> ES6			
+			----------
+
+			1: New ES6 Syntax
+			2: Destructuring
+			3: ES6 Modules
+			4: ES6 Classes
+			5: Arrow Functions
+			6: Symbol
+			7: Iterators & Generators
+			8: Promises
+			9: ES6 Collections
+			10: Array Extensions
+			11: Object Extenstions
+			12: String Extensions
+			
+
+
+			1. New ES6 syntax:
+			-----------------
+						JavaScript let: Declaring Block-Scoped Variables
+							In ES5 : we declare a variable using var keyword.(scope of the variable is eithrer global or local)
+							In ES6 : Provides let keyword.(these variables are blocked-scope).
+
+							Syntax: let variable_name;
+			
 							
 
 		
