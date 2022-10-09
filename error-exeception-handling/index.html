@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+  function calculate(){
+    var a = 123;
+    var b = 145;
+    var c = a + b;
+    try{
+        console.log("Value of a a: " + a);
+        console.log("Value of b : " + b);
+        console.log("Sum of a and b : "  + c);
+    }catch(e){
+        alert("Error" + e.description);
+    }finally{
+        console.log("Finally Block always executes ")
+    }
+  
+  }
+</script>
+<body>
+    <input type="button" value="Click Me" onclick="calculate()" />
+</body>
+</html>

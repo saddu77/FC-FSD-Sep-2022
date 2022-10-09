@@ -8,20 +8,23 @@
 </head>
 <script>
     function user(email,pwd){
+        
         let emailid = email;
         let passwd = pwd;
 
         let getUserDetails = function(){
-            return (`${emailid} ${passwd}`); 
+            //return (`${emailid} ${passwd}`); 
+            return emailid + " " + passwd
         }
 
         this.getUser = function(){
-            return (`${emailid} ${passwd}`);
+           // return (`${emailid} ${passwd}`);
+            return emailid + " " + passwd
         }
     }
 
     let userOne = new user("john@gmail.com","123456");
-    console.log(userOne.emailid);
+    console.log(userOne.emailid);//restricting direct access using reference(object --> userOne )
     console.log(userOne.getUserDetails);
     console.log(userOne.getUser())
     console.log(window.emailid)

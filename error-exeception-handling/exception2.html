@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function validate(){
+        var v1 = parseInt(document.all.t1.value);
+        var v2 = parseInt(document.all.t2.value);
+        var v3 = 0;
+
+        try{
+            if( v2 == 0){
+                throw "Divisor is Zero"
+            }
+            if( v1 == 0){
+                throw "To be divided is Zero"
+            }
+        }catch(error){
+            alert(error);
+        }
+       
+    }
+</script>
+<body>
+    <h2> Enter Values: </h2>
+    Value1 : <input type="text" id="t1"/> <br/>
+    Value2 : <input type="text" id="t2"/> <br />
+    Answer : <input type="button" id="b1" value="clickMe" onclick="validate()"> 
+</body>
+</html>
