@@ -347,7 +347,15 @@
 
 							Syntax: let variable_name;
 			
+		
+							const keyword creates read only reference to a value.
+							The read only reference cannot be reassigned but the value can be change.
+
+
 							
+							
+
+												
 
 		
 			
