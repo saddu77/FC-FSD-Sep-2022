@@ -350,6 +350,23 @@
 		
 							const keyword creates read only reference to a value.
 							The read only reference cannot be reassigned but the value can be change.
+				//start...
+				function1(p1,function2){
+					function2();
+				}
+
+				function2(p2,function3){
+
+				function3()
+				}
+
+				....
+				....
+				functionN(Pn,functionN){
+				}
+
+				//result: success or failure or pending..... CALLBACK HELL
+				// Promise
 
 
 			Assignemnts:
