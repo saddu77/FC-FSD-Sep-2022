@@ -4,7 +4,6 @@ class Sequence{
         this.end = end;
         this.interval = interval;
     }
-
     [Symbol.iterator](){
         let counter = 0;
         let nextIndex = this.start;

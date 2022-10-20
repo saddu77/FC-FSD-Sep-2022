@@ -368,6 +368,48 @@
 				//result: success or failure or pending..... CALLBACK HELL
 				// Promise
 
+				Promises:
+				========	
+					By Definition,a promise is an Object that encapsulates the result of an asynchronous operation.
+
+					A promise Object has a state that can be :
+						1) Pending
+						2) Fulfiled with a value
+						3) Rejected for a reason.
+
+
+						Syntax:
+						======
+							const promise = new Promise((resolve,reject) => {
+							//.... operation or task
+							if(success){
+							   resolve(value);
+							}else {
+							  reject(error);
+							}
+							})
+						
+						then() Method:
+						-------------
+								To get a value of a Promise when its fulfilled,you call then() of thr Promise Object.
+
+							promise.then(onFulfilled,onRejected);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 			Assignemnts:
 			===========
