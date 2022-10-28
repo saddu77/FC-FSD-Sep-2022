@@ -331,7 +331,7 @@
 			5: Arrow Functions
 			6: Symbol
 			7: Iterators & Generators
-			8: Promises
+			8: Promises - Async /Await
 			9: ES6 Collections
 			10: Array Extensions
 			11: Object Extenstions
@@ -402,17 +402,84 @@
 
 
 
+			Lets Maintain a Transaction history: ES6 Syntax
+			===============================================
+
+			Users Module:
+			=============
+					Create Read Update Delete
 
 
 
+			Transaction:
+			============
+				-> User should be logged In
+				-> Transaction Amount should be less than Current Balance
+				
 
-
-
-
-
-
+		
 			Assignemnts:
 			===========
+
+			HTML5 AND CSS3:
+			---------------
+			-> SignUp Form
+			-> Login Form
+			-> Home Page or Dashboard
+
+			   =============================================================
+			   Home   Users   Transactions                            Logout
+
+						
+
+			  Users Page(Data Table in jquery with search) => Should list all users with edit and delete Option.
+
+			  Transactions Page (Data Table in jquery with search) => User Should enter all trasanction details.
+
+			JSON-SERVER:
+			===========
+				users-data.json
+				const users-data = {
+							userid:
+							username:
+							password:
+							email:
+							phone:		
+							gender:
+							age:
+							city:
+							state:
+							pincode:
+							country:
+						  }
+
+
+			   const transactions = {
+
+					         transactionId:
+						 fromUser:			
+						 toUser:
+						 transaction amount:
+						 transaction date:
+						 transaction time:
+						 transacation status:
+
+						}
+
+				
+
+
+
+				
+
+
+
+
+
+
+
+
+
 				
 							
 							
