@@ -466,7 +466,37 @@
 
 						}
 
-				
+			======================================================================================================================	
+
+			JavaScript DOM:  Document Object Model
+			===============		
+
+			DOM is an application programming interface (API) for manipulating HTML documents.
+			The DOM represents an HTML document as a tree of nodes.
+			The DOM provides functions that allows you to add,remove and modify parts of document effectively.
+
+			<html>
+			   <head>
+				<title>JavaScript DOM </title>
+			   </head>
+
+			   <body>
+				<p> Hello DOM!!! </p>
+			   </body>
+
+			</html>
+
+		 	-----------------------------------------------------------------------------------------
+			docuement.getElementById(): 
+					returns an Element object that represents an HTML element with an id that matches a specified string.
+					If the docuemt has no element with the specified id, it returns null.
+			document.getElementsByName():
+
+			document.getElementsByTagName():
+
+
+
+
 
 
 
