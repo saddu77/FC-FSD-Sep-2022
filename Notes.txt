@@ -496,7 +496,21 @@
 
 
 
+========================================================================================================================================
 
+			View:
+				HTML5 CSS3 JS ( Angular or React ) + BootStrap  TESTING
+
+			Backend: NodeJS
+					Express.js<- Framework
+
+				Testing Postman
+
+			DataBases:PostgreSQL,MongoDB
+
+			Documentation using Swagger
+	
+========================================================================================================================================
 
 
 
