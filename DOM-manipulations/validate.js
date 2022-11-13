@@ -2,8 +2,7 @@
 
 function showMessage(input,msg,type){
     const message = input.parentNode.querySelector("small"); 
-   // alert(message)
-   // message.innerText = msg;
+     message.innerText = msg;
     input.className = type? "success" : "error";
     return type;
 }

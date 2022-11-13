@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Select Element Demo</title>    
+</head>
+<body>
+    <div id="container">
+        <form>
+            <label for="framework">Select a JS Framework:</label>
+            <select id="framework">
+                    <option value="angular">Angular</option>
+                    <option value="react">React</option>
+                    <option value="vue">Vue.js</option>
+                    <option>Ember.js</option>
+            </select>
+            <button id="btn">Get the Selected Value</button>
+        </form>
+    </div>
+    <script>
+        const btn = document.querySelector('#btn');
+        const sb = document.querySelector('#framework');
+        btn.onclick = (event) => {
+            event.preventDefault();
+            alert(sb.value);
+        };
+    </script>
+</body>
+</html>
