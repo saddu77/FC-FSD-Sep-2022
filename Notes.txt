@@ -512,8 +512,106 @@
 	
 ========================================================================================================================================
 
+		Files:
+		------
+			
+
+		DBMS:
+		----
+			DataBase Management System
+				Database ia a collection of interrelated data which helps in the efficient retrieval,insertion and deletion of data
+				from the database and organizes the data in the form of tables,views,schemas,reports etc....
 
 
+				 examples:
+						university database organizes the data about students,faculty,admim staff,departments etc...
+						
+				There are four types of Data Languages:
+				1) DDL: Data Definition Language					
+				2) DML: Data Manipulation Language
+				3) DCL: Data Control Language
+				4) TCL: Transactional Control Language
+			
+					1) DDL: Data Definition Language:
+					   ==============================
+									deals with how data should reside in the database:
+									CREATE : creates a database and tables etc...
+									ALTER : alters the structure of the existing database
+									DROP : delete objects from the database
+									TRUNCATE : remove all records from a table
+									RENAME: rename an object
+
+					2) DML: Data Manipulation Language:
+					   ================================
+									deals with data manipulation and includes most common SQL statements suchas
+									SELECT,INSERT,UPDATE,DELETE etc.... 
+									Its used to store,modify,retrieve,delete and update in a database.
+									SELECT: retriee data from a database
+									INSERT: insert data into a table
+									UPDATE:  updates existing data within a table
+									DELETE: Delete all records from a database table
+
+					3) DCL: Data Control Language:
+					   ===========================
+									DCL acts as an access specifier to the database.(basically grant and revoke permissions
+									to users in the database)
+
+									GRANT:
+										grant permissions to the user for running DML(SELECT,INSERT,DELETE,..)
+										commands on the table
+									REVOKE:
+										revoke permissions to the user for running DML (SELECT,INSERT,DELETE,..)
+										on the specified table.
+
+					4) TCL: Transactional Control Language:
+						==============================
+										acts as an manager for all types of transactional data and all transactions.
+
+										RoleBack: Used to cancel or Undo changes made in the database
+										Commit: Its Used to apply or save changes in the database
+										Save Point: Its used to save the data on the temporary basis in the database.
+
+			
+
+			CRUD Operation:
+			--------------
+			
+					Database : sampleDB
+						Table : users
+							id   email   password  	
+
+				Step 1: show databases; 
+						Lists All existing Databases
+				Step 2: create database testDB;
+						Creates a new Database.
+
+				Step 3: use testDB;
+
+				Step 4: create table users(id int,email varchar(50),password varchar(50));
+
+
+				Step 5:  show tables;
+
+
+				Step 6: desc users;
+
+				Step 7: insert into users(id,email,password) values (101,"alex@gmail.com","123456");
+			
+				Step 8: select * from users;
+
+				Step 9: select * from users where id = 101;
+
+				Step 10: update users set password = "888888" where id = 103;
+
+				Step 11: delete from users where id = 103;
+
+				Step 12: delete from users; <- deletes all users from the table
+
+			-> PostGres
+			-> MySQL
+			-> NoSQL-mongoDB
+
+		
 				
 
 

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+    crossorigin="anonymous"></script>
+</head>
+<script>
+    function getData(){
+       var res = $("input:radio[name=gender]:checked").val();
+       alert(res);
+    }
+</script>
+<body>
+    <p>This a paragraph</p>
+    <div>
+        This is a new div
+       <b> <i> <span style="color:brown">This is a span text </span> </i>  </b>
+    </div>
+    <hr/>
+    Name: <input type="text" id="name" /> <br/> <br />
+    Number: <input type="number" /> <br/> <br />
+    <input type="checkbox" name="java">Java
+    <input type="checkbox" name=".net">.Net
+    <input type="checkbox" name="javascript">JavaScript  <br/> <br />
+    <input type="radio" name="gender" value="male"/> Male
+    <input type="radio" name="gender" value="female"/> Female <br/> <br />
+
+    <select>
+        <option>Java</option>
+        <option>.Net</option>
+        <option>Unix</option>
+    </select>
+    <br/> <br />
+    <input type="submit" value="CLick Me" onclick="getData()"/>
+    <hr />
+
+    <img src="./img/flower.jpg" width="400px" height="200px" />
+
+    <hr />
+
+    <a href="https://www.google.com"> Google</a> <br/> <br />
+    <a href="https://www.yahoo.com"> Yahoo</a> <br/> <br />
+    <a href="https://www.gmail.com"> Gmail</a> <br/> <br />
+
+    <hr />
+    
+</body>
+</html>

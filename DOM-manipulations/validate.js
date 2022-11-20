@@ -3,7 +3,7 @@
 function showMessage(input,msg,type){
     const message = input.parentNode.querySelector("small"); 
      message.innerText = msg;
-    input.className = type? "success" : "error";
+    input.className = type ? "success" : "error"; //ternary operator
     return type;
 }
 
