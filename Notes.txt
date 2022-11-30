@@ -611,11 +611,136 @@
 			-> MySQL
 			-> NoSQL-mongoDB
 
+			
+
+
+			9:30 AM to 6:30 PM
+			-------------------
+
+			9:30 AM to 11:15 AM  <---    Session
+			11:30 PM to 1:30 PM  <---    Lab
+			1:30 PM to 2:30 PM   <---    Lunch Break
+			2:30 PM to 4:30 PM   <---    Session
+			4:30 PM to 6:30 PM   <---    Lab
+
+
+			PostGres:
+			--------
+				Its an ORDBMS[Open Source Object Relational DataBase Management System].
+				Used to store data securely.
+				
+			create database sampleDB;
+			\c sampleDB <- to connect db
+			\d users <- describes the table
+			\d <- lists tables
+			insert into users(userid,username,password) values (1,'John','123456');
+			insert into users(userid,username,password) values (2,'Jimmy','123456'),(3,'Julie','123456');
+
+			OrderBy:
+			-------
+				select username from users order by username;
+
+
+			Group By:
+			---------
+				
+
+				create table Employee(id int,firstName text,lastName text,salary real);
+				insert into Employee() values(101,'Alex','N',200000); 
+
+
+			Having:
+			-------
+				select firstname,SUM(salary) from employee GROUP BY firstname HAVING SUM(salary) > 50000 order by firstname DESC;
+
+				select firstname,SUM(salary) from employee GROUP BY firstname HAVING SUM(salary) < 50000 order by firstname DESC;
+
+				select * from employee ORDER BY firstname FETCH first 1 ROW ONLY;				
 		
+				select * from employee where id < 104 AND firstname = 'Niel';
+
+				select * from employee where id < 104 AND salary > 50000;
+				
+				select * from employee,users;
+
+				select * from users;
+
+				select * from employee where users.username = employee.firstname;
+
+				select * from employee,users where users.username = employee.firstname;
+				
+				select * from employee,users where users.username = employee.firstname;
+
+				select * from employee,users where users.username = employee.firstname AND id = 101;
+
+				select * from employee,users where users.username = employee.firstname AND id = 102;
+
+				select * from employee,users where users.username = employee.firstname AND salary > 20000;
+
+				 select * from employee,users where users.username = employee.firstname OR salary < 20000;
+
+				select * from employee,users where users.username = employee.firstname OR salary < 20000;
+				
+				select * from employee,users where users.username = employee.firstname OR salary < 400000;
+
+				select * from employee,users where users.username = employee.firstname AND salary < 400000;
+
+				select * from employee,users where (users.username = employee.firstname OR salary < 400000) AND id < 103;
+
+				 select * from employee WHERE firstname NOT IN('Alex','Bob')  ORDER BY id;
+
+				select * from employee WHERE salary BETWEEN 100000 AND 500000 ORDER BY id DESC;
+
+				 select * from employee WHERE salary >= 100000 AND salary <= 300000 ORDER BY id DESC;
+
+				select * from employee WHERE salary >= 100000 AND salary <= 500000 ORDER BY id DESC;
+
 				
 
 
 
+
+
+
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
+		
+			Users Module:   create User,List users,update Users,delete Users 
+			-------------
+
+				UI	               NodeJS 							 DataBase
+			    BootStrap	 APIs        								  PostGres	
+					POST http://localhost:3001/users/create
+					GET  http://localhost:3001/users/get_all_users				DB Name: myApp
+					GET  http://localhost:3001/users/get_user_by_id/id			Table Name: users
+					PUT  http://localhost:3001/users/update_user_by_id/id			id,email,password,dob,phone,street,area
+				     DELETE  http://localhost:3001/users/delete_user_by_id/id			pincode state country
+
+
+
+
+			
 
 
 
