@@ -983,7 +983,7 @@ end;$$
 
 
 
-
+			Http Request  -------->  path ,controller_function   ----------> ,controller_function   (){}  --------> MongoDB/postgres
 
 
 			
@@ -991,7 +991,7 @@ end;$$
 			Users Module:   create User,List users,update Users,delete Users 
 			-------------
 
-				UI	               NodeJS 							 DataBase
+				UI	               NodeJS - Express.js					 DataBase
 			    BootStrap	 APIs        								  PostGres	
 					POST http://localhost:3001/users/create
 					GET  http://localhost:3001/users/get_all_users				DB Name: myApp
@@ -1000,7 +1000,12 @@ end;$$
 				     DELETE  http://localhost:3001/users/delete_user_by_id/id			pincode state country
 
 
+			PostGres MongoDB Connectivity:
+			-----------------------------
 
+			step1: npm init -y
+			step2: npm install pg
+			step3: create db.js
 
 			
 
@@ -1076,6 +1081,11 @@ db.customer.find({c_age:{$exists:true}}).count()
 db.customer.find({c_age:{$exists:false}}).count()
 
 "
+
+
+
+
+
 			
 				
 
