@@ -695,12 +695,274 @@
 
 				select * from employee WHERE salary >= 100000 AND salary <= 500000 ORDER BY id DESC;
 
+				select * from employee where employee.firstname LIKE '%e%';
+
+				select * from employee where id NOT IN (101,102);
+
+				select * from employee where id NOT IN (101,102);
+
+				select * from employee WHERE age BETWEEN 23 and 25;
+
+				Constraints:
+				============
+						used to describe the rules for the data columns in a table.
+						
+				NOT NULL:
+						its used to make sure that a column canot have a null value.	
+
+				
+					
+
+				UNIQUE:
+					Unique constraint is used to mintain the individuality of the values we store in a 
+					field or acolumn of the	table.
+
+
+				PRIMARY KEY:
+						Unique and not null constraint.
+
+						Each table can have only one primary key.
+					create table nominee(id SERIAL PRIMARY KEY,name varchar(50),email varchar(50),phone varchar(50));
+
+						id     name      email     phone
+						1
+						2
+						
+						
+		
+						
+				FOREIGN KEY:
+						
+				create table account(acc_id int,nominee_id int, PRIMARY KEY(acc_id),CONSTRAINT fk_nominee_id FOREIGN KEY(nominee_id) REFERENCES nominee(id));
+						
+						acc_id   nominee_id(Foreign Key)
+
+			
+				Join:
+				-----
+					it will be used with SELECT command which helps to fetch data from multiple tables.
+
+					SELECT columns
+					FROM table1
+					INNER JOIN table2
+					ON table1.column = table2.column;
+
+					INNER JOIN:
+					-----------
+							SELECT * from nominee INNER JOIN account ON nominee.id = account.nominee_id;
+
+
+					LEFT JOIN:
+					----------
+							return all rows from left table,which can define in the ON condition and only those rows from the 
+							other table where the join condition is satisified.
+
+					SELECT columns
+					FROM table1
+					LEFT JOIN table2
+					ON table1.column = table2.column;
+						
+
+
+
+					Right Join:
+					-----------
+
+							return all rows from right table,which can define in the ON condition and only those rows from the 
+							other table where the join condition is satisified.
+
+					SELECT columns
+					FROM table1
+					RIGHT JOIN table2
+					ON table1.column = table2.column;
+
+
+					Full Outer Join:
+					---------------
+							used to return all records when there is a match in the left table or right table records.
+
+
+
+					SELECT columns
+					FROM table1
+					FULL OUTER JOIN table2
+					ON table1.column = table2.column;
+
+
+					Triggers:
+					---------
+						user defined function connected with a table.
+						-> create a trigger function
+						-> bind the same trigger function to a table.				
+							
+
+						Create Trigger:
+						===============
+						Syntax:
+								CREATE FUNCTION trigger_function()
+								 RETURNS TRIGGER
+								 LANGUAGE PLPGSQL
+								AS $$
+
+								BEGIN
+								  -- trigger logic
+								END;
+								$$
+
+
+								CREATE TRIGGER trigger_name
+								{BEFORE | AFTER}{event}
+								ON table_name
+								[FOR [EACH] { ROW | STATEMENT}]
+								EXECUTE PROCEDURE trigger_function
+
+CREATE OR REPLACE FUNCTION log_name_changes()
+RETURNS TRIGGER
+LANGUAGE PLPGSQL
+AS
+$$
+BEGIN
+IF NEW.name <> OLD.name THEN
+INSERT INTO nominee(id,name,email,phone) VALUES (OLD.ID,OLD.name,OLD.email,OLD.phone);
+END IF;
+RETURN NEW;
+END;
+$$
+
+
+create FUNCTION transfer(
+sender int,
+reciever int,
+amount dec
+)
+returns trigger
+language plpgsql
+as $$
+begin
+-- substracting the amount from the sender's account
+update accounts
+set balance = balance - amount
+where id = sender;
+--adding the amount to the reciever's account
+update accounts
+set balance = balance + amount
+where id = reciever;
+commit;
+end;$$
+
+
+		
+
+	Assignment List:
+	---------------
+
+
+		 	Assignment 21:
+		 	--------------
+				Create a Table with name : BRANCH
+				with fields: BRANCH_CODE CHAR(4) NOT NULL
+					     BRANCH_NAME VARCHAR(40) NOT NULL	     
+					     BRANCH_ADDRESS1 VARCHAR(60) NOT NULL
+					     BRANCH_ADDRESS2 VARCHAR(60)
+					     BRANCH_CITY VARCHAR(30) NOT NULL
+					     BRANCH_ZIP VARCHAR(10) NOT NULL
+					     BRANCH_STATE CHAR(2) NOT NULL
+
+	
+		
+			     	Create a Table with name : CUSTOMER
+			     	with fields:
+					CUST_NO  INT NOT NULL
+					BRANCH_CODE CHAR(4) NOT NULL
+					CUST_USERNAME VARCHAR(16) NOT NULL
+					CUST_PASSWORD VARCHAR(10) NOT NULL
+					CUST_EMAIL VARCHAR(40)
+					CUST_TITLE VARCHAR(3) NOT NULL
+					CUST_GIVENNAMES VARCHAR(40) NOT NULL
+					CUST_SURNAME VARCHAR(40) NOT NULL
+					CUST_ADDRESS1 VARCHAR(60) NOT NULL
+					CUST_ADDRESS2 VARCHAR(60) 
+					CUST_CITY VARCHAR(30) NOT NULL
+					CUST_ZIP VARCHAR(10) NOT NULL
+					CUST_STATE CHAR(2) NOT NULL
+ 
+
+				Create a Table with name : ACCOUNT_TYPE
+			     	with fields:
+					ACCTYPE_ID CHAR(3) NOT NULL
+					ACCTYPE_DESC VARCHAR(30) NOT NULL
+					ACCTYPE_INTERESTRATE DECIMAL(4,2) DEFAULT 0.0
+
+				Create a Table with name : ACCOUNT
+			     	with fields:
+					BRANCH_CODE  CHAR(4)  NOT NULL
+					ACC_NO  CHAR(8) NOT NULL		
+					CUST_NO  INT  NOT NULL
+					ACCTYPE_ID CHAR(3) NOT NULL
+					ACC_BALANCE DECIMAL(10,2) DEFAULT 0.0
+
+
+				Create a Table with name : TRANSACTION_TYPE
+			     	with fields:
+					TRANSTYPE_ID CHAR(4) NOT NULL
+					TRANSTYPE_DESC VARCHAR(40) NOT NULL
+
+				Create a Table with name : TRANSACTION_HISTORY
+			     	with fields:
+					TRANS_ID LONGINT NOT NULL
+					BRANCH_CODE CHAR(4) NOT NULL
+					ACC_NO  CHAR(8) NOT NULL
+					TRANSTYPE_ID  CHAR(4) NOT NULL
+					TRANS_POSTDATE TIMESTAMP NOT NULL
+					TRANS_DESC VARCHAR(40)
+					TRANS_AMOUNT DECIMAL(10,2) NOT NULL
+
+
+			Assignment 22:
+			--------------
+					Write a SQL statement to add a primary key for the columns BRANCH_CODE in the BRANCH table.
+			Assignment 23:
+			--------------
+					Write a SQL statement to add a foreign key constraint named fk_branch_code on branch_code column 
+					on Branch_Code of Customer Table referencing to the primary key Branch_Code of Branch Table.
+
+			Assignment 24:
+			--------------
+					Write a SQL statement to change the email column of the CUSTOMER table.
+
+			Assignment 25:
+			--------------
+
+					Write a SQL statement to change the TRANS_AMOUNT of an TRANSACTION_HISTORY to 8000, 
+					if the existing TRANS_AMOUNT is less than 5000.
 				
 
+				
+
+					
+				
+
+			
+				
+
+ 
 
 
 
+ 
+ 
 
+
+
+ 
+
+		 
+		 
+		
+		 
+
+	
+							
 
 				
 
@@ -748,12 +1010,72 @@
 
 
 				
+			MongoDB:
+			-------
+			Installation				
 							
-							
+			use demoDB;
+			collections                               tables
+			document					rows and columns
+			{
+			  "email":"alex@gmail.com",
+			  "password":"123456"
+			}	
 
-												
 
-		
+			
+			db.users.insertOne({"_id":"001","email":"bob@gmail.com","password":"123456"},{ forceServerObjectId:false})
+
+			db.users.update({"_id":"001"},{$set:{"password":"888888"}})			
+
+			db.users.deleteMany({"email":"bob@gmail"})								
+			
+			Query and Projection Operator:
+			------------------------------
+				Syntax: {<field>:{$eq: <value>}}
+
+					
+					"db.customer.find({c_age:{$gt:22}})        
+
+db.customer.find({c_age:{$gt:22}}).count()
+
+db.customer.find({c_age:{$gt:21}}).count()
+
+db.customer.find({c_age:{$lt:24}}).count()
+
+db.customer.find({c_age:{$in:[21,24]}}).count()
+
+db.customer.find({c_age:{$ne:21}}).count()
+
+db.customer.find({c_age:{$nin:[21,24]}}).count()
+
+db.customer.find({c_age:{$lte:21}}).count()
+
+db.customer.find({age:{$not:{$gt:22}}})
+
+db.customer.find({age:{$not:{$gt:21}}})
+
+db.customer.find({age:{$not:{$gt:24}}})
+
+db.customer.find({age:{$not:{$gt:21}}})
+
+db.customer.find({$and:[{age:{$ne:24}},{age:{$exists:true}}]})
+
+ db.customer.find({$and:[{age:{$ne:24}},{age:{$exists:true}}]}).count()
+
+ db.customer.find({$and:[{age:{$ne:22}},{age:{$exists:true}}]}).count()
+
+db.customer.find({$and:[{age:{$ne:22}},{age:{$exists:false}}]}).count()
+
+ db.customer.find({$and:[{c_age:{$ne:22}},{c_age:{$exists:true}}]}).count()
+
+db.customer.find({$and:[{c_age:{$ne:22}},{c_age:{$exists:true}}]}).count()
+
+db.customer.find({c_age:{$exists:true}}).count()
+
+db.customer.find({c_age:{$exists:false}}).count()
+
+"
 			
 				
 
