@@ -1000,7 +1000,7 @@ end;$$
 				     DELETE  http://localhost:3001/users/delete_user_by_id/id			pincode state country
 
 
-			PostGres MongoDB Connectivity:
+			PostGres-Node JS Connectivity:
 			-----------------------------
 
 			step1: npm init -y
@@ -1082,6 +1082,87 @@ db.customer.find({c_age:{$exists:false}}).count()
 
 "
 
+	Aggregation in MongoDB:
+	----------------------
+				aggregation operations process the data records/documents and return computed results.
+				It collects values from various documents and groups them togeather and then performs 
+				different types of operations on that grouped data like sum,average,minimum.maximum etc to return a computed result.
+
+				MongoDB provides 3 ways to perform aggregation:
+
+				1. Aggregation pipeline:
+					aggregation pipeline is a multi stage pipeline,so in each state,the documents are taken as input and produce
+					the resultant set of documents ,next the resultant document taken as input and produce output.
+					
+					
+
+
+					db.train.aggregate([{$match:{class:"first-class"}},{$group:{_id:"id",total:{$sum:"$fare"}}}])
+
+					db.train.aggregate([{$group:{_id:"id",total:{$sum:"$fare"}}}])
+                                                         stage        expression      Accumulator
+					
+					$group:
+						stage groups the documents by id field to calculate the sum of fare for each unique id.
+
+					Stages:
+						Each stage starts from stage operators:
+						$match:
+							Its used for filtering the documents can reduce the amount of documents that are given as
+							input to the next stage.
+						$project:
+							Its used to select some specific fields from a collection.
+
+						$group:
+							Its used to group documents based on some value.
+
+						$sort:
+							used to sort documents (re arranging them)
+
+
+						$skip:
+							skip n number of documents and passes the remaining documents
+
+						$out: used to write resulting documents to a new collection.
+
+
+
+					Expressions:
+							It refers to the name of the field in input documents.
+						Example: {$group:{_id:"$id",total:{$sum:"$fare"}}}
+								$id and $fare are expressions.
+
+					
+					Accumulator:
+							used in the group stage
+						sum: sums numeric values for the document in each group
+						count: counts total numbers of documents
+						avg: It calculates the avg of all given values from all documents.
+						min: minimum value from all the documents.
+						max: gets maximum value from all the documents
+						first: gets the first document from the grouping
+						last: gets the last document from the grouping.
+
+						db.train.aggregate([{$match:{class:'first-class'}},{$count:"Total count of  first class"}])
+
+
+						db.train.aggregate([{$group:{_id:"$id",total:{$sum:1},max_fare:{$max:"$fare"}}}])
+			
+						db.train.aggregate([{$group:{_id:"$id",total:{$sum:1},min_fare:{$min:"$fare"}}}])
+
+
+
+
+
+					
+
+
+
+
+
+					
+				2. Map-reduce function
+				3. Single-purpose aggregation
 
 
 
