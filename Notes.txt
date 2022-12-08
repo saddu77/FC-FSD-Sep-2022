@@ -935,6 +935,20 @@ end;$$
 
 					Write a SQL statement to change the TRANS_AMOUNT of an TRANSACTION_HISTORY to 8000, 
 					if the existing TRANS_AMOUNT is less than 5000.
+
+			Assignemnt 26:
+			--------------
+
+					MongoDB: maintaining a relationship between customer_accounts to branch.
+
+				db.bank.find(); it should list all brances with its customers
+				db.bank.find({'branch-code':'01'}) 
+
+					
+			       Bank-Branch1     ------> Customer1,Customer2,Customer3 ...etc....	
+				    Branch2	------> Customer4,Customer5,Customer6 ...etc....
+				    Branch3	------> Customer7,Customer8,Customer9 ...etc....
+				    Branch4	------> Customer10,Customer11,Customer12...etc....
 				
 
 				
@@ -1042,23 +1056,23 @@ end;$$
 					
 					"db.customer.find({c_age:{$gt:22}})        
 
-db.customer.find({c_age:{$gt:22}}).count()
+					db.customer.find({c_age:{$gt:22}}).count()
 
-db.customer.find({c_age:{$gt:21}}).count()
+					db.customer.find({c_age:{$gt:21}}).count()
 
-db.customer.find({c_age:{$lt:24}}).count()
+					db.customer.find({c_age:{$lt:24}}).count()
 
-db.customer.find({c_age:{$in:[21,24]}}).count()
+					db.customer.find({c_age:{$in:[21,24]}}).count()
 
-db.customer.find({c_age:{$ne:21}}).count()
+					db.customer.find({c_age:{$ne:21}}).count()
 
-db.customer.find({c_age:{$nin:[21,24]}}).count()
+					db.customer.find({c_age:{$nin:[21,24]}}).count()
 
-db.customer.find({c_age:{$lte:21}}).count()
+					db.customer.find({c_age:{$lte:21}}).count()
 
-db.customer.find({age:{$not:{$gt:22}}})
+					db.customer.find({age:{$not:{$gt:22}}})
 
-db.customer.find({age:{$not:{$gt:21}}})
+					db.customer.find({age:{$not:{$gt:21}}})
 
 db.customer.find({age:{$not:{$gt:24}}})
 
@@ -1152,19 +1166,34 @@ db.customer.find({c_age:{$exists:false}}).count()
 
 
 
+				
+				2. Map-reduce function:
+							Its used for aggregating results for the large volume of data.
+							Map Reduce has two main functions one is map that groups all the documents and the second 
+							one is the reduce which performs opreation on the grouped data.
+
+							db.collectionName.mapReduce(mappingFunction,reduceFunction, {out:'Result'});
+
+							var mapfunction = function(){emit(this.id,this.fare)}
+							var reducefunction = function(key,values){return Array.sum(values)}
+							db.train.mapReduce(mapfunction,reducefunction,{'out':'Results'})
+								{ result: 'Results', ok: 1 }
+
+							db.Results.find()
+
+							[ { _id: '101', value: 3200 }, { _id: '102', value: 1200 } ]
 
 
-					
+				3. Single-purpose aggregation:
+							Its used when we need simple access to document like counting the number of documents or for
+					finding all distinct values in a document.
 
 
+					It simply provides the access to the common aggregation process using the count(), distinct() and
+					estimatedDocumentCount() methods, so due to which it lacks the flexibilty and capabolities of the pipeline.
 
-
-
-					
-				2. Map-reduce function
-				3. Single-purpose aggregation
-
-
+							db.train.distinct("class")
+							db.train.distinct("fare)
 
 
 			
@@ -1172,6 +1201,8 @@ db.customer.find({c_age:{$exists:false}}).count()
 
 
 
+				
+					
 
 
 
