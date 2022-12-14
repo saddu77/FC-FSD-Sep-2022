@@ -1014,6 +1014,69 @@ end;$$
 				     DELETE  http://localhost:3001/users/delete_user_by_id/id			pincode state country
 
 
+					POST http://localhost:3001/flight/create
+					GET  http://localhost:3001/flights/get_all_flights
+					GET  http://localhost:3001/flights/get_flight_by_id/id
+					PUT  http://localhost:3001/flights/update_user_by_id/id
+					DELETE  http://localhost:3001/flights/delete_user_by_id/id		
+
+				Monolithic Architecture
+				UI                   NodeJS: 3001                               PostGres: 5432 (or)
+												mongoDB: 27017
+							Users                                    users table
+							Flights                                 flights table
+
+
+				Micro Services:
+				----------------
+
+			UI		UsersModule : 3001        PostGres : usersDB
+					npm start
+
+					Transactions: 3002        mongoDB  : transactionsDB
+					npm start
+
+					Reports:      3003        Postgres : reportsDB
+					npm start
+
+
+					API Gateway,Rabbit MQ
+					
+	
+					Eureka Client Discovery
+
+
+					Development : Micro Services
+					Testing : 
+					Deployment : Docker and DockerHub (Introduction to CI/CD )
+				
+
+
+			=========================================================================================
+
+			=> POST  User Registration or SignUp [user saved in db]
+
+			=> POST User Login or Sign In
+
+			Step1:
+			POST Login Request ====>  username and Password
+							======> validate credentails(compare the user input values with values in db)
+								========> if user is matched return success else return "invalid credentails"
+			Step2:
+			JWT : JSON Web Token
+
+					 if user is matched return 
+					{
+					"status":"success"
+					"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIzNDU2Nzg5LCJuYW1lIjoiS
+						   m9zZXBoIn0.OpOSSw7e485LOP5PrzScxHb7SR6sAOMRckfFwi4rp7o" 
+					}
+			=========================================================================================
+
+			
+
+			
+
 			PostGres-Node JS Connectivity:
 			-----------------------------
 
@@ -1204,7 +1267,8 @@ db.customer.find({c_age:{$exists:false}}).count()
 				
 					
 
-
+			sadakhath0709@outlook.com
+			Admin@123$$
 
 
 
