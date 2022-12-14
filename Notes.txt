@@ -1267,8 +1267,6 @@ db.customer.find({c_age:{$exists:false}}).count()
 				
 					
 
-			sadakhath0709@outlook.com
-			Admin@123$$
 
 
 
