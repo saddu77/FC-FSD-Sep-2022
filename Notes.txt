@@ -1034,7 +1034,7 @@ end;$$
 					npm start
 
 					Transactions: 3002        mongoDB  : transactionsDB
-					npm start
+				    	npm start
 
 					Reports:      3003        Postgres : reportsDB
 					npm start
@@ -1261,14 +1261,118 @@ db.customer.find({c_age:{$exists:false}}).count()
 
 			
 				
+			
+				
+				SDLC: SOftware Developemnt Life Cycle:
+
+				--> Requirement Gathering [BRS,CRS,SRS,FRS]
+				--> Analysis or Feasibility Study
+				--> Design (HLD or LLD) [TDD,FDD]
+				--> Coding				
+				--> Testing <-  STLC[SOFTWARE TEST LIFE CYCLE]
+				--> Implementation
+				--> Maintainence								     DEPLOYMENT
+							DEVELOPMENT SERVER or STAGING SERVER OR LOCAL SERVER     ==================> PRODUCTION SERVER
+							[domain name or IP]							     CLIENT'S SERVER
+				[ Development   --> SCM TOOLS(GitLab)  -----> Merged or Comibined -----> Testing ]      BUILD		LIVE SERVER
+
+				D1  M1
+
+				D2  M2
+
+				D3  M3
+
+				D4  M4
+
+				D5  M5
+
+				D6  M6
+
+				
+				WebApps: SPA,Responsive...... [mobile browsers]
+
+				Mobile App: iPhone : .ipa
+					    Android : .apk
+
+				Hybrid Apps or Native Apps
 
 
+				PWAs: Progresive Web Apps
 
 				
 					
+				SECURITY : OAuth 2.0 ---> JWT JSON Web Token
+						ROLE MANAGEMENT  <-- admin 
+								 <-- user 
+								 <-- client 
+			
 
-			sadakhath0709@outlook.com
-			Admin@123$$
+
+				
+				UI                      BACKEND                MODEL                                Testing			 Build Tools         Swagger UI    kafka,RabbitMQ     Deployment
+			Angular or React	    NodeJS                      mysql,mongo,posgtres			Mocha,Jest and Ezyme	  Docker,Gradle		yes		 etc		aws,cloud etc
+			Bootsrap UI		    Java,.Net,PHP,Golang        DynamoDB,couchbase server...		Junit,Selenium...		Maven etc.					jenkins
+			Material UI
+
+
+
+
+
+			Docker:
+			-------
+				Introduction:
+				=============
+						mysql server or mongodb
+						nodejs
+
+						build an image and upload that into docker hub
+						
+				Installation:
+				============
+		
+				Commands:
+				=========
+						docker --version
+						docker images <- lists all images
+						docker ps -a <- lists all running images
+
+						docker pull hello-world
+						docker run hello-world
+		
+						docker stop container-id <- to stop running conatiner image
+						docker rm container-id <- to remove image from container
+
+
+						navigate to products api : docker-compose up
+
+
+						
+
+							
+
+						orders service:	http://localhost:3005/orders
+
+						products service: http://localhost:3006/products
+			
+						API Gateway: 	http://localhost:3007/products
+								http://localhost:3007/orders
+
+
+					
+						
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
