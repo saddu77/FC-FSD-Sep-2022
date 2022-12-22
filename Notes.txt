@@ -1364,14 +1364,25 @@ db.customer.find({c_age:{$exists:false}}).count()
 
 
 
+					Order:  mongo
+
+
+					Product:  
 
 
 
 
 
 
-
-
+			Project Details:
+			1. PPT : Presentation
+			2. Model : Design or FLow Chart
+			3. Number of Micro Services:
+			4. Tools: Swagger UI,POSTman,NodeJS,Express.js,PostGres or MySQL
+			5. Testing : Unit Testing [Mocha and CHai]
+			6. Logs
+			
+			
 
 
 
